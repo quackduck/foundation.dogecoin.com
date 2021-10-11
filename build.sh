@@ -23,6 +23,10 @@ do
       SYM_LINKS+=($LOCALE_VARIANT)
     fi
   done
+
+  # Add the doge lang files
+  DOG_VARIANT=$(echo $MASTER_FILE | sed "s/.md/.dog.md/")
+  $DOGGO_BIN < ${MASTER_FILE} > $DOG_VARIANT
 done
 
 # Run hugo's build command
